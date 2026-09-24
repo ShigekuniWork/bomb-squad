@@ -1,0 +1,16 @@
+language: 'unknown'
+
+tasks:
+  actionlint:
+    type: run
+    description: GitHub Actions ワークフローを静的解析する
+    command: actionlint
+    options:
+      runInCI: always
+
+  zizmor:
+    type: run
+    description: GitHub Actions ワークフローのセキュリティを監査する
+    command: zizmor workflows
+    options:
+      runInCI: always

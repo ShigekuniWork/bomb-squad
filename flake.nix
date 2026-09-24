@@ -18,6 +18,8 @@
             govulncheck
             betterleaks
             moon
+            actionlint
+            zizmor
           ];
         };
       });
