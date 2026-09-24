@@ -13,6 +13,9 @@
       in {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
+            go_1_27
+            golangci-lint
+            govulncheck
             betterleaks
             lefthook
           ];
