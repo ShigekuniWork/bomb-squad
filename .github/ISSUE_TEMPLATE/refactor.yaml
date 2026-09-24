@@ -1,0 +1,46 @@
+name: Refactor
+description: 既存コードや設計の改善
+title: "[Refactor]: "
+labels:
+  - refactor
+
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 変更する内容を簡潔に記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      description: 現在の問題や改善したい理由を記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 変更内容
+      description: 実施するリファクタリング内容を記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足
+      description: 関連Issue、参考資料など
