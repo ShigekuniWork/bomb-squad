@@ -1,0 +1,47 @@
+name: Feature
+description: 新機能や機能改善のIssue
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 実装する内容を簡潔に記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜこの変更が必要なのかを記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: 要件
+      description: 必要な機能や振る舞いを記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      description: Issueを完了と判断できる条件を記載する
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足
+      description: 関連Issue、参考資料など

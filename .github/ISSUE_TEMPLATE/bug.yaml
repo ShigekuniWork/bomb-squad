@@ -1,0 +1,48 @@
+name: Bug
+description: 不具合の報告
+title: "[Bug]: "
+labels:
+  - bug
+
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 発生している問題を簡潔に記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 問題を再現するための手順を記載する
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する挙動
+      description: 本来どのように動作するべきかを記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の挙動
+      description: 実際に発生した挙動を記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足
+      description: ログ、スクリーンショット、関連Issueなど
