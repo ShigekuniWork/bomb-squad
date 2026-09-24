@@ -1,0 +1,9 @@
+pre-commit:
+  jobs:
+    - name: betterleaks
+      run: betterleaks git . --pre-commit --staged
+
+commit-msg:
+  jobs:
+    - name: commit-message
+      run: bash scripts/commit-message.sh "{1}"
