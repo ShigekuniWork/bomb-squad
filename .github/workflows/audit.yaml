@@ -37,4 +37,4 @@ jobs:
         uses: DeterminateSystems/determinate-nix-action@e9bfc9148566ca239aef4f5cb968674de15c3c20 # v3.5.2
 
       - name: Run govulncheck
-        run: nix develop --command moon run root:go/audit
+        run: nix develop --command moon run root:golang-audit
