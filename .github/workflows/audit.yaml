@@ -1,0 +1,40 @@
+name: Audit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/go.mod"
+      - "**/go.sum"
+  pull_request:
+  schedule:
+    - cron: '0 1 * * 0'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Nix
+        uses: DeterminateSystems/determinate-nix-action@e9bfc9148566ca239aef4f5cb968674de15c3c20 # v3.5.2
+
+      - name: Run govulncheck
+        run: nix develop --command moon run root:go/audit
