@@ -17,7 +17,7 @@
             golangci-lint
             govulncheck
             betterleaks
-            lefthook
+            moon
           ];
         };
       });

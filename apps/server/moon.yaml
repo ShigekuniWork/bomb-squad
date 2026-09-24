@@ -1,0 +1,9 @@
+language: 'go'
+
+tasks:
+  run:
+    type: run
+    description: サーバーを起動する
+    command: go run .
+    options:
+      runInCI: false
