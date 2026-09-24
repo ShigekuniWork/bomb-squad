@@ -1,0 +1,37 @@
+language: 'unknown'
+
+tasks:
+  betterleaks:
+    type: run
+    description: リポジトリ全体の秘密情報の漏えいを検査する
+    command: betterleaks git .
+    options:
+      runInCI: always
+
+  betterleaks-staged:
+    type: run
+    description: ステージ済みの変更から秘密情報の漏えいを検査する
+    command: betterleaks git . --pre-commit --staged
+    options:
+      runInCI: false
+
+  golang-lint:
+    type: run
+    description: Goのソースコードを静的解析する
+    command: golangci-lint run ./...
+    options:
+      runInCI: always
+
+  golang-audit:
+    type: run
+    description: Goの依存関係に既知の脆弱性がないか検査する
+    command: govulncheck ./...
+    options:
+      runInCI: always
+
+  commit-message:
+    type: run
+    description: コミットメッセージが形式に従っているか検証する
+    command: bash scripts/commit-message.sh "$ARG1"
+    options:
+      runInCI: false
