@@ -1,0 +1,6 @@
+overrides:
+  baseline-browser-mapping: 2.11.25
+  electron-to-chromium: 1.5.438
+
+allowBuilds:
+  esbuild: true

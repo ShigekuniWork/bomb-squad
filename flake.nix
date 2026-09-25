@@ -14,6 +14,8 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             go_1_27
+            nodejs_26
+            pnpm
             golangci-lint
             govulncheck
             betterleaks

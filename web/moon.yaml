@@ -1,0 +1,16 @@
+language: 'javascript'
+
+tasks:
+  dev:
+    type: run
+    description: フロントエンドの開発サーバーを起動する
+    command: pnpm dev
+    options:
+      runInCI: false
+
+  build:
+    type: run
+    description: フロントエンドをビルドする
+    command: pnpm build
+    options:
+      runInCI: true
