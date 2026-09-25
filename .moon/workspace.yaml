@@ -1,6 +1,7 @@
 projects:
   root: '.'
   server: './cmd/server'
+  web: './web'
   github: './.github'
 
 vcs:
