@@ -14,3 +14,10 @@ tasks:
     command: pnpm build
     options:
       runInCI: true
+
+  lint:
+    type: run
+    description: フロントエンドのコードをBiomeで静的解析する
+    command: pnpm lint
+    options:
+      runInCI: true
