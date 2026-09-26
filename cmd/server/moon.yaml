@@ -7,3 +7,52 @@ tasks:
     command: go run .
     options:
       runInCI: false
+
+  test:
+    type: test
+    description: Goのテストを実行する
+    command: go test ./...
+    options:
+      runFromWorkspaceRoot: true
+
+  sqlc-gen:
+    type: build
+    description: sqlcの型付きSQLコードを生成する
+    command: sqlc generate --file internal/storage/postgres/sqlc.yaml
+    inputs:
+      - '/internal/storage/postgres/sqlc.yaml'
+      - '/internal/storage/postgres/schema.sql'
+      - '/internal/storage/postgres/queries/**/*.sql'
+    outputs:
+      - '/internal/storage/postgres/sqlc/**/*'
+    options:
+      runFromWorkspaceRoot: true
+
+  migrate-up:
+    type: run
+    description: DATABASE_URLで指定したDBへgoose migrationを適用する
+    command: goose -dir internal/storage/postgres/migrations postgres "$DATABASE_URL" up
+    options:
+      cache: false
+      envFile: '/.env'
+      runInCI: false
+      runFromWorkspaceRoot: true
+
+  migrate-status:
+    type: run
+    description: goose migrationの適用状況を確認する
+    command: goose -dir internal/storage/postgres/migrations postgres "$DATABASE_URL" status
+    options:
+      cache: false
+      envFile: '/.env'
+      runInCI: false
+      runFromWorkspaceRoot: true
+
+  migrate-validate:
+    type: test
+    description: goose migrationファイルを検証する
+    command: goose -dir internal/storage/postgres/migrations validate
+    options:
+      cache: false
+      runInCI: always
+      runFromWorkspaceRoot: true

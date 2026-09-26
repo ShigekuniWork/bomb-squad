@@ -23,6 +23,8 @@
             actionlint
             zizmor
             docker
+            goose
+            sqlc
           ];
         };
       });
