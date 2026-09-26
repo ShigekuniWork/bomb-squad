@@ -41,6 +41,7 @@ tasks:
     description: 開発用 Docker Compose 環境を起動する
     command: docker compose up -d
     options:
+      cache: false
       runInCI: false
 
   dev-down:
@@ -48,4 +49,5 @@ tasks:
     description: 開発用 Docker Compose 環境を停止する
     command: docker compose down
     options:
+      cache: false
       runInCI: false
