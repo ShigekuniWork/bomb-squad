@@ -1,0 +1,36 @@
+language: 'unknown'
+
+tasks:
+  format:
+    type: run
+    description: Protocol BuffersをBufのフォーマットで検証する
+    command: buf format --diff --exit-code
+    inputs:
+      - 'proto/**/*.proto'
+      - 'buf.yaml'
+    options:
+      runInCI: always
+
+  lint:
+    type: test
+    description: Protocol BuffersをBufで静的解析する
+    command: buf lint
+    inputs:
+      - 'proto/**/*.proto'
+      - 'buf.yaml'
+    options:
+      runInCI: always
+
+  generate:
+    type: build
+    description: GoのProtocol BuffersとConnect RPCコード、APIドキュメントを生成する
+    command: buf generate
+    inputs:
+      - 'proto/**/*.proto'
+      - 'buf.yaml'
+      - 'buf.gen.yaml'
+    outputs:
+      - '/internal/api/gen/**/*'
+      - '/docs/api/**/*'
+    options:
+      runInCI: always

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package bombsquad.api.v1.common;
+
+service HealthService {
+  // Returns the current health of the BombSquad API.
+  rpc GetHealth(GetHealthRequest) returns (GetHealthResponse);
+}
+
+message GetHealthRequest {}
+
+message GetHealthResponse {
+  // A human-readable health status.
+  string status = 1;
+}
