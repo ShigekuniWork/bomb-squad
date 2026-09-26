@@ -22,6 +22,7 @@
             moon
             actionlint
             zizmor
+            docker
           ];
         };
       });
