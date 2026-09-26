@@ -35,3 +35,17 @@ tasks:
     command: bash scripts/commit-message.sh "$ARG1"
     options:
       runInCI: false
+
+  dev-up:
+    type: run
+    description: 開発用 Docker Compose 環境を起動する
+    command: docker compose up -d
+    options:
+      runInCI: false
+
+  dev-down:
+    type: run
+    description: 開発用 Docker Compose 環境を停止する
+    command: docker compose down
+    options:
+      runInCI: false
