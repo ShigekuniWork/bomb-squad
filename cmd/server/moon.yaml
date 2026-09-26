@@ -1,5 +1,8 @@
 language: 'go'
 
+dependsOn:
+  - 'api'
+
 tasks:
   run:
     type: run
@@ -12,6 +15,9 @@ tasks:
     type: test
     description: Goのテストを実行する
     command: go test ./...
+    deps:
+      - target: 'api:generate'
+        cacheStrategy: outputs
     options:
       runFromWorkspaceRoot: true
 

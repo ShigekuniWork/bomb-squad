@@ -19,6 +19,7 @@
             golangci-lint
             govulncheck
             betterleaks
+            buf
             moon
             actionlint
             zizmor

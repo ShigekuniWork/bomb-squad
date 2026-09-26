@@ -1,0 +1,36 @@
+version: v2
+
+clean: true
+
+inputs:
+  - directory: proto
+
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/ShigekuniWork/bomb-squad/internal/api/gen
+
+plugins:
+  - local:
+      - go
+      - run
+      - google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.11
+    out: ../internal/api/gen
+    opt:
+      - paths=source_relative
+  - local:
+      - go
+      - run
+      - connectrpc.com/connect/cmd/protoc-gen-connect-go@v1.18.1
+    out: ../internal/api/gen
+    opt:
+      - paths=source_relative
+
+  - local:
+      - go
+      - run
+      - github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@v1.5.1
+    out: ../docs/api
+    opt:
+      - markdown,api.md

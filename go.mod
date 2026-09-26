@@ -2,7 +2,11 @@ module github.com/ShigekuniWork/bomb-squad
 
 go 1.27.1
 
-require github.com/jackc/pgx/v5 v5.7.6
+require (
+	connectrpc.com/connect v1.18.1
+	github.com/jackc/pgx/v5 v5.7.6
+	google.golang.org/protobuf v1.36.11
+)
 
 require (
 	github.com/jackc/pgpassfile v1.0.0 // indirect

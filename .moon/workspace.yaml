@@ -1,5 +1,6 @@
 projects:
   root: '.'
+  api: './api'
   server: './cmd/server'
   web: './web'
   github: './.github'
