@@ -1,5 +1,8 @@
 # BombSquad
 
+> [!WARNING]
+> まだ試行錯誤中なので、破壊的変更が多く入る可能性があります。
+
 BombSquad は、SBOM(Software Bill of Materials)を継続的に追跡し、既知の脆弱性を検出・管理するためのアプリケーションです。
 
 ## 目的
