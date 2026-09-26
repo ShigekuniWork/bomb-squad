@@ -6,6 +6,7 @@ tasks:
     description: リポジトリ全体の秘密情報の漏えいを検査する
     command: betterleaks git .
     options:
+      cache: false
       runInCI: always
 
   betterleaks-staged:
@@ -13,6 +14,7 @@ tasks:
     description: ステージ済みの変更から秘密情報の漏えいを検査する
     command: betterleaks git . --pre-commit --staged
     options:
+      cache: false
       runInCI: false
 
   golang-lint:

@@ -1,0 +1,10 @@
+title = "BombSquad betterleaks 設定"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = ".env.example は例として使われるだけで、本番環境のものは記載しないため許可する。"
+paths = [
+  ".env.example"
+]
